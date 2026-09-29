@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Galería de Diseños | Libella</title>
+
+    <!-- Estilos de la galería -->
+    <link rel="stylesheet" href="Galeria.css">
+
+    <!-- Fuentes -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Iconos -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ============================= -->
+    <!-- ENCABEZADO -->
+    <!-- ============================= -->
+
+    <header class="banner-galeria">
+
+        <div class="banner-contenido">
+
+            <p>Inspírate con Libella</p>
+
+            <h1>Galería de Diseños</h1>
+
+            <span>
+                Encuentra ideas para tu próxima cita.
+            </span>
+
+
+            <a
+                href="Index.html"
+                class="btn-volver">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Volver al inicio
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+        <!-- ============================= -->
+        <!-- TÍTULO DINÁMICO -->
+        <!-- ============================= -->
+
+        <section id="titulo-servicio">
+
+            <!--
+                JavaScript cambiará este título dependiendo
+                del servicio seleccionado.
+            -->
+            <h2>Diseños de Manicure</h2>
+
+            <p>
+                Explora algunos de nuestros diseños y
+                encuentra inspiración para tus uñas.
+            </p>
+
+        </section>
+
+
+
+        <!-- ============================= -->
+        <!-- GALERÍA -->
+        <!-- ============================= -->
+
+        <!--
+            Este contenedor empieza vacío.
+
+            Galeria.js se encarga de crear y agregar
+            las imágenes automáticamente.
+        -->
+        <section
+            class="galeria"
+            id="galeria-contenido">
+        </section>
+
+
+
+        <!-- Botón para reservar -->
+
+    </main>
+
+
+
+    <!-- ============================= -->
+    <!-- FOOTER -->
+    <!-- ============================= -->
+
+    <footer class="footer">
+
+        <div>
+
+            <h3>Libella</h3>
+
+            <p>Estética y Maquillaje</p>
+
+        </div>
+
+
+        <div class="footer-contacto">
+
+            <p>
+                <i class="fab fa-instagram"></i>
+                @Libella.cute
+            </p>
+
+            <p>
+                <i class="fas fa-phone-alt"></i>
+                301 750 1031
+            </p>
+
+        </div>
+
+    </footer>
+
+          <!-- ============================= -->
+      <!-- BOTÓN FLOTANTE DE RESERVA -->
+      <!-- ============================= -->
+
+      <!--
+          Este botón permanece visible mientras el usuario
+          recorre la galería.
+
+          Al hacer clic lleva nuevamente a Index.html,
+          directamente a la sección de reserva de citas.
+      -->
+      <a href="Index.html#citas" class="btn-reserva-flotante">
+
+          <i class="fa-regular fa-calendar-check"></i>
+
+          <span>Reservar cita</span>
+
+      </a>
+
+    <!--
+        JavaScript se coloca al final para que primero
+        cargue el contenido HTML.
+    -->
+    <script src="Galeria.js"></script>
+
+</body>
+
+</html>

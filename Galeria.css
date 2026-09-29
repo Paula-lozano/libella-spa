@@ -1,0 +1,404 @@
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+   ===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: "Poppins", sans-serif;
+
+    background-color: #fff9fc;
+
+    color: #4d3442;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   BANNER
+   ===================================================== */
+
+.banner-galeria {
+    min-height: 420px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 20px;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(70, 17, 52, 0.62),
+            rgba(70, 17, 52, 0.62)
+        ),
+        url("Imagenes/FondoBanner.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+.banner-contenido {
+    max-width: 700px;
+}
+
+
+.banner-contenido > p {
+    font-family: "Dancing Script", cursive;
+
+    color: #ffd4e8;
+
+    font-size: 2rem;
+}
+
+
+.banner-contenido h1 {
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(3.5rem, 8vw, 5.5rem);
+
+    line-height: 1;
+
+    margin-bottom: 15px;
+}
+
+
+.banner-contenido span {
+    display: block;
+
+    margin-bottom: 30px;
+
+    font-size: 1.05rem;
+}
+
+
+/* Botón para regresar */
+.btn-volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 22px;
+
+    border-radius: 30px;
+
+    background-color: #d94f8e;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.btn-volver:hover {
+    background-color: #b93371;
+
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   TÍTULO DEL SERVICIO
+   ===================================================== */
+
+#titulo-servicio {
+    max-width: 750px;
+
+    margin: auto;
+
+    padding: 70px 20px 35px;
+
+    text-align: center;
+}
+
+
+#titulo-servicio h2 {
+    color: #64164f;
+
+    font-size: 2.4rem;
+
+    margin-bottom: 10px;
+}
+
+
+#titulo-servicio p {
+    color: #725e69;
+}
+
+
+/* =====================================================
+   GALERÍA DE IMÁGENES
+   ===================================================== */
+
+.galeria {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 20px 5% 80px;
+
+    display: grid;
+
+    /*
+       El navegador calcula automáticamente
+       cuántas columnas caben en pantalla.
+    */
+    grid-template-columns:
+        repeat(auto-fit, minmax(230px, 1fr));
+
+    gap: 25px;
+}
+
+
+/*
+   Estas imágenes son creadas desde Galeria.js.
+*/
+.galeria img {
+    width: 100%;
+    height: 320px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 25px rgba(94, 32, 66, 0.15);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.galeria img:hover {
+    transform: translateY(-7px) scale(1.02);
+
+    box-shadow:
+        0 18px 35px rgba(94, 32, 66, 0.25);
+}
+
+/* =====================================================
+   BOTÓN FLOTANTE PARA RESERVAR
+   ===================================================== */
+
+/*
+   Este botón permanece visible mientras el usuario
+   recorre los diseños de la galería.
+*/
+.btn-reserva-flotante {
+
+    /*
+       position: fixed hace que el elemento mantenga
+       su posición aunque movamos la página.
+    */
+    position: fixed;
+
+
+    /*
+       Lo ubicamos en la esquina inferior derecha.
+    */
+    right: 25px;
+    bottom: 25px;
+
+
+    /*
+       z-index permite que el botón permanezca
+       por encima de las fotografías.
+    */
+    z-index: 1000;
+
+
+    /*
+       Usamos flex para colocar el icono y el texto
+       uno al lado del otro.
+    */
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+
+    /* Espacio interior del botón */
+    padding: 14px 22px;
+
+
+    /* Colores */
+    background-color: #c53c79;
+
+    color: white;
+
+
+    /*
+       Quitamos la línea que normalmente tienen
+       los enlaces.
+    */
+    text-decoration: none;
+
+
+    /* Forma redondeada */
+    border-radius: 30px;
+
+
+    /* Texto */
+    font-weight: 600;
+
+
+    /*
+       Agregamos una sombra suave para separar
+       visualmente el botón del fondo.
+    */
+    box-shadow:
+        0 8px 25px rgba(94, 32, 66, 0.30);
+
+
+    /*
+       transition hace más suaves los cambios
+       cuando pasamos el mouse.
+    */
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/*
+   Efecto al pasar el mouse sobre el botón.
+*/
+.btn-reserva-flotante:hover {
+
+    background-color: #9f285e;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(94, 32, 66, 0.38);
+}
+
+
+/*
+   Hacemos el icono un poco más grande.
+*/
+.btn-reserva-flotante i {
+    font-size: 1.2rem;
+}
+
+/* =====================================================
+   INVITACIÓN PARA RESERVAR
+   ===================================================== */
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+.footer {
+    padding: 35px 7%;
+
+    background-color: #52113d;
+
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+}
+
+
+.footer h3 {
+    font-family: "Dancing Script", cursive;
+
+    color: #ffd4e8;
+
+    font-size: 2rem;
+}
+
+
+.footer-contacto p {
+    margin: 5px 0;
+}
+
+
+.footer-contacto i {
+    width: 25px;
+
+    color: #f6a9cc;
+}
+
+
+/* =====================================================
+   DISEÑO RESPONSIVO
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    .banner-galeria {
+        min-height: 370px;
+    }
+
+
+    #titulo-servicio h2 {
+        font-size: 1.9rem;
+    }
+
+
+    .galeria {
+        /*
+           En celulares dejamos una sola columna
+           para que las fotografías tengan buen tamaño.
+        */
+        grid-template-columns: 1fr;
+    }
+
+
+    .galeria img {
+        height: 360px;
+    }
+
+
+    .footer {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    /*
+   En celulares hacemos el botón flotante
+   un poco más pequeño para que no tape
+   demasiado contenido.
+*/
+.btn-reserva-flotante {
+
+    right: 15px;
+
+    bottom: 15px;
+
+    padding: 12px 17px;
+
+    font-size: 0.9rem;
+}
+
+}

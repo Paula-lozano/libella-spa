@@ -1,0 +1,1020 @@
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+   ===================================================== */
+
+/*
+   El símbolo * selecciona todos los elementos.
+
+   box-sizing: border-box hace más fácil controlar
+   los tamaños porque el padding y el borde se incluyen
+   dentro del ancho del elemento.
+*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*
+   scroll-behavior permite que cuando hacemos clic en
+   "Servicios", "Reserva", etc., el desplazamiento sea suave.
+*/
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #fff9fc;
+    color: #4d3442;
+    line-height: 1.6;
+}
+
+
+/* Evita que las imágenes se salgan de su contenedor */
+img {
+    max-width: 100%;
+}
+
+
+/* =====================================================
+   ENCABEZADO
+   ===================================================== */
+
+.encabezado {
+    width: 100%;
+    min-height: 90px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 7%;
+
+    background-color: rgba(255, 255, 255, 0.97);
+
+    box-shadow: 0 3px 15px rgba(99, 32, 69, 0.08);
+
+    /*
+       sticky hace que el menú permanezca arriba
+       mientras bajamos por la página.
+    */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.contenedor-logo {
+    display: flex;
+    align-items: center;
+}
+
+
+.logo-enc {
+    width: 180px;
+    height: 75px;
+
+    /*
+       object-fit evita deformar el logo.
+    */
+    object-fit: contain;
+}
+
+
+/* Lista del menú */
+.menu-principal ul {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+
+    list-style: none;
+}
+
+
+/* Enlaces del menú */
+.menu-principal a {
+    color: #64164f;
+    text-decoration: none;
+
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    position: relative;
+
+    transition: color 0.3s ease;
+}
+
+
+/*
+   Creamos una pequeña línea debajo del enlace.
+   Inicialmente tiene ancho 0.
+*/
+.menu-principal a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background-color: #d94f8e;
+
+    transition: width 0.3s ease;
+}
+
+
+/* Al pasar el mouse mostramos la línea */
+.menu-principal a:hover::after {
+    width: 100%;
+}
+
+
+.menu-principal a:hover {
+    color: #d94f8e;
+}
+
+
+/* =====================================================
+   PRESENTACIÓN PRINCIPAL
+   ===================================================== */
+
+.hero {
+    min-height: 620px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 8%;
+
+    /*
+       Colocamos una capa oscura transparente encima
+       de la imagen para que el texto pueda leerse.
+    */
+    background:
+        linear-gradient(
+            rgba(64, 16, 48, 0.48),
+            rgba(64, 16, 48, 0.48)
+        ),
+        url("Imagenes/FondoBanner.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+.hero-contenido {
+    max-width: 680px;
+
+    color: white;
+
+    animation: aparecer 0.8s ease;
+}
+
+
+.texto-pequeno {
+    font-family: "Dancing Script", cursive;
+
+    font-size: 2rem;
+
+    color: #ffd4e8;
+
+    margin-bottom: 5px;
+}
+
+
+.hero h1 {
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(3.2rem, 7vw, 5.8rem);
+
+    line-height: 1;
+
+    margin-bottom: 25px;
+
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+
+.hero-contenido > p:not(.texto-pequeno) {
+    max-width: 550px;
+
+    font-size: 1.1rem;
+
+    margin-bottom: 35px;
+}
+
+
+/* Botón principal */
+.boton-principal {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 25px;
+
+    background-color: #d94f8e;
+    color: white;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+    font-weight: 600;
+
+    box-shadow: 0 7px 20px rgba(128, 21, 79, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+.boton-principal:hover {
+    background-color: #b93371;
+
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   TÍTULOS DE LAS SECCIONES
+   ===================================================== */
+
+.titulo-seccion {
+    max-width: 750px;
+
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+
+.titulo-seccion span {
+    font-family: "Dancing Script", cursive;
+
+    color: #d94f8e;
+
+    font-size: 1.8rem;
+}
+
+
+.titulo-seccion h2 {
+    color: #64164f;
+
+    font-size: 2.3rem;
+
+    margin: 5px 0 10px;
+}
+
+
+.titulo-seccion p {
+    color: #725e69;
+}
+
+
+.titulo-claro h2,
+.titulo-claro p {
+    color: white;
+}
+
+
+.titulo-claro span {
+    color: #ffd4e8;
+}
+
+
+/* =====================================================
+   MISIÓN Y VISIÓN
+   ===================================================== */
+
+.mision-vision {
+    padding: 90px 7%;
+
+    background:
+        linear-gradient(
+            rgba(255, 249, 252, 0.92),
+            rgba(255, 249, 252, 0.92)
+        ),
+        url("Imagenes/FondoSectionMision-Vision.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 35px;
+
+    perspective: 1000px;
+}
+
+
+/*
+   Cada tarjeta tiene una cara frontal y una trasera.
+*/
+.card {
+    width: 300px;
+    height: 280px;
+
+    position: relative;
+
+    transform-style: preserve-3d;
+
+    transition: transform 0.7s ease;
+
+    cursor: pointer;
+}
+
+
+/* Giramos la tarjeta al pasar el mouse */
+.card:hover {
+    transform: rotateY(180deg);
+}
+
+
+.card .front,
+.card .back {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 30px;
+
+    border-radius: 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    /*
+       Oculta la cara que queda mirando hacia atrás.
+    */
+    backface-visibility: hidden;
+
+    box-shadow: 0 15px 35px rgba(102, 31, 69, 0.15);
+}
+
+
+.card .front {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dc6a9e,
+            #a62c69
+        );
+}
+
+
+.card .front i {
+    font-size: 2.5rem;
+
+    margin-bottom: 20px;
+}
+
+
+.card .front h3,
+.card .back h3 {
+    font-size: 1.5rem;
+
+    margin-bottom: 10px;
+}
+
+
+.card .front p {
+    font-size: 0.85rem;
+
+    opacity: 0.9;
+}
+
+
+.card .back {
+    background-color: white;
+
+    color: #5d4050;
+
+    transform: rotateY(180deg);
+
+    border: 1px solid #f4c8dc;
+}
+
+
+.enlace-tarjeta {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    color: #c53c79;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   SERVICIOS
+   ===================================================== */
+
+.servicios {
+    padding: 90px 7%;
+
+    background:
+        linear-gradient(
+            rgba(72, 18, 54, 0.82),
+            rgba(72, 18, 54, 0.82)
+        ),
+        url("Imagenes/FondoSectionServicio.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+.servicios-grid {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    /*
+       Se crean columnas automáticamente dependiendo
+       del espacio disponible.
+    */
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 25px;
+}
+
+
+.servicio-card {
+    min-height: 280px;
+
+    padding: 35px 25px;
+
+    background-color: rgba(255, 255, 255, 0.95);
+
+    border-radius: 22px;
+
+    color: #5d4050;
+
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.servicio-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+.servicio-card i {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 50%;
+
+    background-color: #fce0ec;
+
+    color: #c53c79;
+
+    font-size: 1.8rem;
+}
+
+
+.servicio-card h3 {
+    color: #64164f;
+
+    font-size: 1.3rem;
+
+    margin-bottom: 10px;
+}
+
+
+.servicio-card p {
+    font-size: 0.9rem;
+
+    margin-bottom: 20px;
+}
+
+
+.servicio-card span {
+    color: #c53c79;
+
+    font-weight: 600;
+
+    margin-top: auto;
+}
+
+
+/* =====================================================
+   RESERVAS
+   ===================================================== */
+
+.citas {
+    padding: 90px 7%;
+
+    background:
+        linear-gradient(
+            rgba(255, 249, 252, 0.88),
+            rgba(255, 249, 252, 0.88)
+        ),
+        url("Imagenes/FondoSectionReserva.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+.contenedor-formulario {
+    max-width: 950px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+
+    overflow: hidden;
+
+    background-color: white;
+
+    border-radius: 25px;
+
+    box-shadow: 0 15px 40px rgba(102, 31, 69, 0.14);
+}
+
+
+/* Parte izquierda del formulario */
+.informacion-reserva {
+    padding: 50px 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #9c285f,
+            #dc6a9e
+        );
+
+    color: white;
+}
+
+
+.informacion-reserva > i {
+    font-size: 3rem;
+
+    margin-bottom: 20px;
+}
+
+
+.informacion-reserva h3 {
+    font-size: 1.7rem;
+
+    margin-bottom: 15px;
+}
+
+
+.informacion-reserva > p {
+    margin-bottom: 35px;
+}
+
+
+.dato-reserva {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+
+.dato-reserva i {
+    font-size: 1.4rem;
+}
+
+
+.dato-reserva p {
+    font-size: 0.85rem;
+}
+
+
+/* Formulario */
+#form-cita {
+    padding: 45px;
+}
+
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+
+.campo-formulario label {
+    margin-bottom: 7px;
+
+    color: #64164f;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+}
+
+
+.campo-formulario input,
+.campo-formulario select,
+.campo-formulario textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #e7cad8;
+
+    border-radius: 10px;
+
+    background-color: #fffafd;
+
+    color: #4d3442;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 0.95rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/*
+   :focus se activa cuando el usuario está escribiendo
+   o seleccionando un campo.
+*/
+.campo-formulario input:focus,
+.campo-formulario select:focus,
+.campo-formulario textarea:focus {
+    border-color: #d94f8e;
+
+    box-shadow: 0 0 0 3px rgba(217, 79, 142, 0.12);
+}
+
+
+.boton-formulario {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #c53c79;
+
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.boton-formulario:hover {
+    background-color: #9f285e;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   OPINIONES
+   ===================================================== */
+
+#opiniones {
+    padding: 90px 7%;
+
+    background:
+        linear-gradient(
+            rgba(255, 243, 249, 0.9),
+            rgba(255, 243, 249, 0.9)
+        ),
+        url("Imagenes/FondoSectionOpiniones.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+.opiniones-contenedor {
+    max-width: 850px;
+
+    margin: auto;
+}
+
+
+#form-opinion {
+    max-width: 600px;
+
+    margin: 0 auto 50px;
+
+    padding: 35px;
+
+    background-color: white;
+
+    border-radius: 20px;
+
+    box-shadow: 0 12px 30px rgba(102, 31, 69, 0.12);
+}
+
+
+#lista-opiniones {
+    max-width: 700px;
+
+    margin: auto;
+}
+
+
+/*
+   Esta clase se crea desde JavaScript cada vez
+   que un usuario publica una opinión.
+*/
+.opinion {
+    position: relative;
+
+    margin-bottom: 18px;
+
+    padding: 22px 25px 22px 55px;
+
+    background-color: white;
+
+    border-radius: 15px;
+
+    border-left: 5px solid #d94f8e;
+
+    box-shadow: 0 7px 20px rgba(102, 31, 69, 0.08);
+}
+
+
+.opinion::before {
+    content: "❝";
+
+    position: absolute;
+
+    left: 18px;
+    top: 12px;
+
+    color: #e9a3c3;
+
+    font-size: 2rem;
+}
+
+
+.opinion strong {
+    color: #64164f;
+}
+
+
+.opinion p {
+    margin-top: 5px;
+
+    color: #69545f;
+}
+
+
+/* =====================================================
+   PIE DE PÁGINA
+   ===================================================== */
+
+.pie {
+    padding: 40px 7%;
+
+    background-color: #52113d;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+}
+
+
+.pie-logo {
+    width: 130px;
+
+    padding: 5px;
+
+    background-color: white;
+
+    border-radius: 12px;
+}
+
+
+.footer-texto {
+    flex: 1;
+
+    min-width: 220px;
+}
+
+
+.footer-texto h3 {
+    font-family: "Dancing Script", cursive;
+
+    font-size: 2rem;
+
+    color: #ffd4e8;
+}
+
+
+.footer-contacto p {
+    margin: 8px 0;
+}
+
+
+.footer-contacto i {
+    width: 25px;
+
+    color: #f6a9cc;
+}
+
+
+/* =====================================================
+   ANIMACIÓN SENCILLA
+   ===================================================== */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   DISEÑO PARA CELULARES Y TABLETS
+   ===================================================== */
+
+@media (max-width: 850px) {
+
+    /* El encabezado pasa a columna */
+    .encabezado {
+        flex-direction: column;
+
+        padding: 15px 5%;
+    }
+
+
+    .logo-enc {
+        width: 150px;
+        height: 65px;
+    }
+
+
+    .menu-principal ul {
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 15px 22px;
+
+        margin-top: 10px;
+    }
+
+
+    .menu-principal a {
+        font-size: 0.85rem;
+    }
+
+
+    /* Hero más pequeño */
+    .hero {
+        min-height: 540px;
+
+        padding: 70px 7%;
+
+        text-align: center;
+
+        justify-content: center;
+    }
+
+
+    .hero-contenido > p:not(.texto-pequeno) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* Formulario en una sola columna */
+    .contenedor-formulario {
+        grid-template-columns: 1fr;
+    }
+
+
+    .informacion-reserva {
+        text-align: center;
+    }
+
+
+    .dato-reserva {
+        justify-content: center;
+    }
+
+}
+
+
+/* Pantallas pequeñas */
+@media (max-width: 550px) {
+
+    .hero h1 {
+        font-size: 3.3rem;
+    }
+
+
+    .titulo-seccion h2 {
+        font-size: 1.8rem;
+    }
+
+
+    .card {
+        width: 100%;
+        max-width: 310px;
+    }
+
+
+    #form-cita,
+    #form-opinion {
+        padding: 25px 20px;
+    }
+
+
+    .servicios,
+    .mision-vision,
+    .citas,
+    #opiniones {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+
+    .pie {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+}
